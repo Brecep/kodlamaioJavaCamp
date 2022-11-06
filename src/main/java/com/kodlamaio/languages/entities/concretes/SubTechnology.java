@@ -1,13 +1,12 @@
 package com.kodlamaio.languages.entities.concretes;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -19,17 +18,20 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="languages")
+@Table(name="sub_technology")
 @Builder
-public class Language {
+public class SubTechnology {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	@Column(name="language_id")
-	private int languageId;
+	@Column(name="subtechnology_id")
+	private int subtechnologyId;
 	
-	@Column(name="language_name")
-	private String languageName;
+	@Column(name="subtechnology_name")
+	private String subtechnologyName;
 	
-	@OneToMany(mappedBy = "language")
-	private List<SubTechnology> subTechnologies;
+	@ManyToOne
+	@JoinColumn(name="language_id")
+	private Language language;
+	
+	
 }

@@ -5,7 +5,7 @@ import java.util.List;
 import com.kodlamaio.languages.business.requests.language.CreateLanguageRequest;
 import com.kodlamaio.languages.business.requests.language.DeleteLanguageRequest;
 import com.kodlamaio.languages.business.requests.language.UpdateLanguageRequest;
-import com.kodlamaio.languages.business.response.GetAllLanguageResponse;
+import com.kodlamaio.languages.business.response.language.GetAllLanguageResponse;
 import com.kodlamaio.languages.entities.concretes.Language;
 
 public interface LanguageService {
@@ -18,5 +18,7 @@ public interface LanguageService {
 	List<GetAllLanguageResponse> getAll();
 
 	Language getById(int id);
+	
+	Language getLanguageId(int id);
 
 }

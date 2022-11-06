@@ -14,7 +14,7 @@ import com.kodlamaio.languages.business.abstracts.LanguageService;
 import com.kodlamaio.languages.business.requests.language.CreateLanguageRequest;
 import com.kodlamaio.languages.business.requests.language.DeleteLanguageRequest;
 import com.kodlamaio.languages.business.requests.language.UpdateLanguageRequest;
-import com.kodlamaio.languages.business.response.GetAllLanguageResponse;
+import com.kodlamaio.languages.business.response.language.GetAllLanguageResponse;
 import com.kodlamaio.languages.entities.concretes.Language;
 
 @RestController
@@ -30,27 +30,27 @@ public class LanguageController {
 	}
 
 	@PostMapping("/add")
-	private void add(@RequestBody CreateLanguageRequest createLanguageRequest) throws Exception {
+	public void add(@RequestBody CreateLanguageRequest createLanguageRequest) throws Exception {
 		this.languageService.add(createLanguageRequest);
 	}
 
 	@PostMapping("/delete")
-	private void delete(@RequestBody DeleteLanguageRequest deleteLanguageRequest) {
+	public void delete(@RequestBody DeleteLanguageRequest deleteLanguageRequest) {
 		this.languageService.delete(deleteLanguageRequest);
 	}
 
 	@PostMapping("/update")
-	private void update(@RequestBody UpdateLanguageRequest updateLanguageRequest) {
+	public void update(@RequestBody UpdateLanguageRequest updateLanguageRequest) {
 		languageService.update(updateLanguageRequest);
 	}
 
 	@GetMapping("/getall")
-	private List<GetAllLanguageResponse> getAll() {
+	public List<GetAllLanguageResponse> getAll() {
 		return this.languageService.getAll();
 	}
 
 	@GetMapping("/getbyid")
-	private Language getById(@RequestParam int id) {
+	public Language getById(@RequestParam int id) {
 		return this.languageService.getById(id);
 	}
 }

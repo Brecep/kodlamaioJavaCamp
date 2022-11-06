@@ -1,5 +1,4 @@
-package com.kodlamaio.languages.business.response;
-
+package com.kodlamaio.languages.business.response.subtechnology;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,7 +9,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class GetAllLanguageResponse {
+public class GetAllSubTechnologyResponse {
+	private int subtechnologyId;
+
+	private String subtechnologyName;
+
 	private int languageId;
-	private String languageName;
+
 }

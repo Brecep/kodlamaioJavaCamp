@@ -10,7 +10,7 @@ import com.kodlamaio.languages.business.abstracts.LanguageService;
 import com.kodlamaio.languages.business.requests.language.CreateLanguageRequest;
 import com.kodlamaio.languages.business.requests.language.DeleteLanguageRequest;
 import com.kodlamaio.languages.business.requests.language.UpdateLanguageRequest;
-import com.kodlamaio.languages.business.response.GetAllLanguageResponse;
+import com.kodlamaio.languages.business.response.language.GetAllLanguageResponse;
 import com.kodlamaio.languages.dataAccess.LanguageRepository;
 import com.kodlamaio.languages.entities.concretes.Language;
 
@@ -75,10 +75,16 @@ public class LanguageManager implements LanguageService{
 	
 	
 	private void checkIfEmptyNameExists(String name) throws Exception {
-		//Language language=this.languageRepository.findByName(name);
+		//Language language=this.languageRepository.findByName(name);asdasd
 		if(name.isEmpty() || name.isBlank()) {
 			throw new Exception("Programlama ismi boş geçilemez");
 		}
+	}
+
+	@Override
+	public Language getLanguageId(int id) {
+		
+		return this.languageRepository.findById(id).get();
 	}
 	
 }

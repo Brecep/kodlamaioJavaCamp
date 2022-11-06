@@ -1,4 +1,4 @@
-package com.kodlamaio.languages.business.response;
+package com.kodlamaio.languages.business.response.language;
 
 
 import lombok.AllArgsConstructor;

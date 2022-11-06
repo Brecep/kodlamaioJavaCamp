@@ -8,6 +8,8 @@ public class LanguagesApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LanguagesApplication.class, args);
+		
+		
 	}
 
 }
